@@ -1,6 +1,62 @@
 /**
  * Created by ddennis on 7/16/2016.
  */
+//this is the the user data...
+var missingData = [
+    {
+        "name": "Megan Noland",
+        "age": 35,
+        "sex": "female",
+        "description": "white female wearing red shirt",
+        "status": "MISSING",
+        "location": "",
+        "collision": false,
+        "contact": "931-567-2571",
+        "seenWith":
+        {
+            "name": "Raphella Motta",
+            "contact": "931-678-3682"
+        }
+    },
+    {
+        "name": "Edward Saltzman",
+        "age": 62,
+        "sex": "male",
+        "description": "black male in wheelchair",
+        "status": "FOUND",
+        "location": "Port Protection, AK",
+        "collision": true,
+        "contact": "907-221-9730",
+        "seenWith":
+        {
+            "name": "Varsha Quam",
+            "contact": "907-332-0841"
+        }
+    },
+    {
+        "name": "Edward Saltzman",
+        "age": 12,
+        "sex": "male",
+        "description": "Hispanic male with beanie",
+        "status": "FOUND",
+        "location": "Nome, AK",
+        "collision": true,
+        "contact": "907-442-8460",
+        "seenWith":
+        {
+            "name": "Varsha Quam",
+            "contact": "907-553-9571"
+        }
+    }
+];
+
+var test = function(){
+    window.alert("HERE");
+    for(var i = 0; i < missingData.length;i++){
+        var obj = missingData[i];
+        window.alert(obj.name);
+    }
+}
 
 //stuff for the google map.
 function initMap() {
@@ -57,3 +113,6 @@ function initMap() {
         radius: Math.sqrt(900) * 100
     });
 }
+
+
+
