@@ -1,6 +1,8 @@
 /**
  * Created by ddennis on 7/16/2016.
  */
+
+
 //this is the the user data...
 var missingData = [
     {
@@ -50,13 +52,15 @@ var missingData = [
     }
 ];
 
-var test = function(){
-    window.alert("HERE");
-    for(var i = 0; i < missingData.length;i++){
-        var obj = missingData[i];
-        window.alert(obj.name);
-    }
-}
+//we want to populate the table every time the page is loaded. 
+$( document ).ready(function() {
+
+    missingData.forEach(function(entry) {
+        $('#data').append('<b>'+entry.name+ " " + entry.age + " " + entry.sex + " " + "Status = " + entry.status + '</b><br />' + '</b><br />');
+    })
+
+});
+
 
 //stuff for the google map.
 function initMap() {
@@ -113,6 +117,4 @@ function initMap() {
         radius: Math.sqrt(900) * 100
     });
 }
-
-
 
