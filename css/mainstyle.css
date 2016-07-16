@@ -17,8 +17,13 @@ body
     background-color: #428bca;
 }
 
-#map{
-    width: 143%;
-    height: 400px;
-    background-color: grey;
+#contactform .btn:hover {
+    background: rgba(9,8,77,0.7);
+}
+
+#map-canvas {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 15px;
+    border: 2px solid #fff;
 }
