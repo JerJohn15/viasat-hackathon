@@ -8,14 +8,19 @@
 
     <!-- Bootstrap -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
     <!-- style sheets -->
     <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
     <!-- script file -->
     <script src="javascript/myscripts.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpYqQp6TVjEndCdG4atwP71UHVK4xtRP8&callback=initMap"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpYqQp6TVjEndCdG4atwP71UHVK4xtRP8&callback=initMap"></script>
 </head>
 
 <body role="document">
@@ -23,15 +28,28 @@
 <div class="healthcheck-header" id="content">
     <div class="container">
         <span class="glyphicon glyphicon-search" style="color: white;"></span>
-        <h1 style="display:inline; position: relative; top: 10px; right: -10px;">Finder App?</h1>
+        <h1 style="display:inline; position: relative; top: 10px; right: -10px;">What will this app be called?</h1>
     </div>
 </div>
 
 <div class="container-fluid height-full bg-dark">
     <div class="row">
-        <div class="col-xs-3">THE LEFTTTT</div>
+        <div class="col-xs-3">
+            <div class="well" id="leftwell">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text" class=" search-query form-control" placeholder="Search" style="test-allign:center"/>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="button">
+                                        <span class=" glyphicon glyphicon-search" style="color:#ff4400;"></span>
+                                    </button>
+                                </span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col-xs-9">
-            <div id = "map-canvas"></div>
+            <div id="map-canvas"></div>
         </div>
     </div>
 </div>
