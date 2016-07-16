@@ -2,6 +2,7 @@
  * Created by ddennis on 7/16/2016.
  */
 
+//stuff for the google map.
 function initMap() {
     var styles = [{
         "elementType": "geometry",
@@ -34,13 +35,25 @@ function initMap() {
     var styledMap = new google.maps.StyledMapType(styles,
         {name: "Styled Map"});
     var mapOptions = {
-        zoom: 15,
-        center: new google.maps.LatLng(40.5748, -105.0810),
+        zoom: 14,
+        center: new google.maps.LatLng(29.9511, -90.0715),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
+
 
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
     map.mapTypes.set('map_style', styledMap);
     map.setMapTypeId('map_style');
+
+    var cityCircle = new google.maps.Circle({
+        strokeColor: '#EFA533',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#F3BE6C',
+        fillOpacity: 0.35,
+        map: map,
+        center: {lat:29.9511,lng:-90.0715},
+        radius: Math.sqrt(900) * 100
+    });
 }
