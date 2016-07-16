@@ -9,15 +9,16 @@ body
 .healthcheck-header
 {
     position: relative;
-
     padding: 15px 15px;
-
     text-shadow: 0 1px 0 rgba;
-
     height: 125px;
-
     margin-bottom: 25px;
-
     color: #fff;
     background-color: #428bca;
+}
+
+#map{
+    width: 143%;
+    height: 400px;
+    background-color: grey;
 }

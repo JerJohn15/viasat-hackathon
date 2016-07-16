@@ -20,7 +20,9 @@
 
     <!-- script file -->
     <script src="javascript/myscripts.js"></script>
-
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpYqQp6TVjEndCdG4atwP71UHVK4xtRP8&callback=initMap">
+    </script>
 </head>
 <body role="document">
 
@@ -35,11 +37,9 @@
 <div class="container">
 
     <div class = "col-md-2" id = "left">
-        <h1>This should be the left</h1>
     </div>
 
-    <div class = "col-md-10" id = "left">
-        <h1>This should be the right</h1>
+    <div class = "col-md-10" id = "right">
         <div id = "map"></div>
     </div>
 
