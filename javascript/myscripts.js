@@ -2,7 +2,8 @@
  * Created by ddennis on 7/16/2016.
  */
 
-
+var modal = "";
+var span = "";
 //this is the the user data...
 var missingData = [
     {
@@ -87,6 +88,7 @@ var missingData = [
 
 //we want to populate the table every time the page is loaded.
 $( document ).ready(function() {
+    modal = document.getElementById('myModal');
     printData();
 });
 
@@ -96,17 +98,34 @@ var printData = function(){
     missingData.forEach(function(entry) {
 
         if(entry.status === "MISSING"){
-            $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + entry.name + " Age = " + entry.age + " Sex = " + entry.sex + '<span onclick="test()" style="float:right; cursor: pointer; cursor: hand;">'+" Status = " + entry.status.fontcolor("red") + '</b><br />' + '</span' +  '</li>');
+            $('#information').append('<li class = "list-group-item" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson()">' + '<b>'+ "Name = " + entry.name + " Age = " + entry.age + " Sex = " + entry.sex + '<span  style="float:right; cursor: pointer; cursor: hand;" >'+" Status = " + entry.status.fontcolor("red") + '</b><br />' + '</span' +  '</li>');
         } else if(entry.status === "FOUND"){
-            $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + entry.name + " Age = " + entry.age + " Sex = " + entry.sex + '<span onClick="test()" style="float:right;  cursor: pointer; cursor: hand;">'+" Status = " + entry.status.fontcolor("green") + '</b><br />' + '</span' +  '</li>');
+            $('#information').append('<li class = "list-group-item" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson()">' + '<b>'+ "Name = " + entry.name + " Age = " + entry.age + " Sex = " + entry.sex + '<span  style="float:right;  cursor: pointer; cursor: hand;" >'+" Status = " + entry.status.fontcolor("green") + '</b><br />' + '</span' +  '</li>');
         } else if(entry.status ==="LAST SEEN"){
-            $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + entry.name + " Age = " + entry.age + " Sex = " + entry.sex + '<span onClick="test()" style="float:right;  cursor: pointer; cursor: hand;">'+" Status = " + entry.status.fontcolor("orange") + '</b><br />' + '</span' +  '</li>');
+            $('#information').append('<li class = "list-group-item" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson()">' + '<b>'+ "Name = " + entry.name + " Age = " + entry.age + " Sex = " + entry.sex + '<span  style="float:right;  cursor: pointer; cursor: hand;" >'+" Status = " + entry.status.fontcolor("orange") + '</b><br />' + '</span' +  '</li>');
         }
 
     })
 
 };
 
+//this is the modal for displaying missing person data
+
+//since haritsa does not know how to program I had to write this crap code.
+var missingPerson = function(){
+    modal.style.display = "block";
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
+//this is a work around for haritsa bad code... Send him back to school.
+var closePerosonModal = function(){
+    modal.style.display = "none";
+}
 //this is showing the modal for the userInfo i.e missing/found/last seen
 var addPerson = function(){
 
@@ -138,11 +157,11 @@ var addPerson = function(){
         var object = missingData[i];
         if(i === missingData.length - 1){
             if(object.status === "Missing"){
-                $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex +  '<span onclick="test()" style="float:right; cursor: pointer; cursor: hand;">'+" Status = " + object.status.fontcolor("red") + '</b><br />' + '</span' +  '</li>');
+                $('#information').append('<li class = "list-group-item" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson()">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex +  '<span " style="float:right; cursor: pointer; cursor: hand;" >'+" Status = " + object.status.fontcolor("red") + '</b><br />' + '</span' +  '</li>');
             } else if(object.status === "FOUND"){
-                $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex +  '<span onClick="test()" style="float:right;  cursor: pointer; cursor: hand;">'+" Status = " + object.status.fontcolor("green") + '</b><br />' + '</span' +  '</li>');
+                $('#information').append('<li class = "list-group-item" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson()">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex +  '<span  style="float:right;  cursor: pointer; cursor: hand;" >'+" Status = " + object.status.fontcolor("green") + '</b><br />' + '</span' +  '</li>');
             } else if(object.status ==="LAST SEEN"){
-                $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex +  '<span onClick="test()" style="float:right;  cursor: pointer; cursor: hand;">'+" Status = " + object.status.fontcolor("orange") + '</b><br />' + '</span' +  '</li>');
+                $('#information').append('<li class = "list-group-item" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson()">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex +  '<span  style="float:right;  cursor: pointer; cursor: hand;" >'+" Status = " + object.status.fontcolor("orange") + '</b><br />' + '</span' +  '</li>');
             }
 
         }
@@ -205,4 +224,5 @@ function initMap() {
         radius: Math.sqrt(900) * 100
     });
 }
+
 
