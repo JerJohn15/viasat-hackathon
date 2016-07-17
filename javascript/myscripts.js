@@ -3,11 +3,11 @@
  */
 
 var modal = "";
-
+var phoneNumbers = [];
 //this is the the user data...
 var missingData = [
     {
-        "id" : "1",
+        "id" : 1,
         "name": "Megan Noland",
         "age": 35,
         "sex": "female",
@@ -18,18 +18,17 @@ var missingData = [
         "contact": "931-567-2571",
         "seenWith":
         {
-            "name": "Raphella Motta",
-            "contact": "931-678-3682"
+            "name": "none"
         }
     },
     {
-        "id" : "2",
+        "id" : 2,
         "name": "Edward Saltzman",
         "age": 62,
         "sex": "male",
         "description": "black male in wheelchair",
         "status": "FOUND",
-        "location": "Port Protection, AK",
+        "location": "New Orleans, LA",
         "collision": true,
         "contact": "907-221-9730",
         "seenWith":
@@ -39,13 +38,13 @@ var missingData = [
         }
     },
     {
-        "id":"3",
+        "id": 3,
         "name": "Bob Smo",
         "age": 12,
         "sex": "male",
         "description": "Hispanic male with beanie",
         "status": "LAST SEEN",
-        "location": "Nome, AK",
+        "location": "New Orleans, LA",
         "collision": true,
         "contact": "907-442-8460",
         "seenWith":
@@ -55,13 +54,13 @@ var missingData = [
         }
     },
     {
-        "id":"4",
+        "id": 4,
         "name": "Chandler Funk",
         "age": 99,
         "sex": "female",
         "description": "white girl",
         "status": "LAST SEEN",
-        "location": "Little Rock, AK",
+        "location": "New Orleans, LA",
         "collision": true,
         "contact": "555-669-2222",
         "seenWith":
@@ -70,13 +69,13 @@ var missingData = [
         }
     },
     {
-        "id":"5",
+        "id": 5,
         "name": "Jim Edwards",
         "age": 27,
         "sex": "male",
         "description": "white guy",
         "status": "MISSING",
-        "location": "Little Rock, AK",
+        "location": "New Orleans, LA",
         "collision": true,
         "contact": "907-505-6987",
         "seenWith":
@@ -84,6 +83,234 @@ var missingData = [
             "name": "none"
         }
     },
+    {
+        "id": 6,
+        "name": "Cherilyn Coggins",
+        "age": 51,
+        "sex": "female",
+        "description": "old black female with a large dog",
+        "status": "LAST SEEN",
+        "location": "New Orleans, LA",
+        "collision": false,
+        "contact": "802-910-9069",
+        "seenWith":
+        {
+            "name": "Hagley Spates",
+            "contact": "604-820-8028"
+        }
+    },
+    {
+        "id": 7,
+        "name": "Talos Schafer",
+        "age": 63,
+        "sex": "male",
+        "description": "Hispanic male wearing a tinfoil hat",
+        "status": "MISSING",
+        "location": "",
+        "collision": false,
+        "contact": "913-625-1653",
+        "seenWith":
+        {
+            "name": "none"
+        }
+    },
+    {
+        "id": 8,
+        "name": "Srikant Garabedian",
+        "age": 39,
+        "sex": "male",
+        "description": "Indian male who ocan levitate while meditating",
+        "status": "FOUND",
+        "location": "New Orleans, LA",
+        "collision": false,
+        "contact": "479-355-3553",
+        "seenWith":
+        {
+            "name": "none"
+        }
+    },
+    {
+        "id": 9,
+        "name": "Strato Frison",
+        "age": 67,
+        "sex": "male",
+        "description": "Old bald white man with a walker",
+        "status": "LAST SEEN",
+        "location": "New Orleans, LA",
+        "collision": false,
+        "contact": "636-356-1377",
+        "seenWith":
+        {
+            "name": "Sakinah Brackett",
+            "contact": "686-806-6822"
+        }
+    },
+    {
+        "id": 10,
+        "name": "Canance Carpenter",
+        "age": 25,
+        "sex": "female",
+        "description": "asian female with camping supplies",
+        "status": "MISSING",
+        "location": "",
+        "collision": false,
+        "contact": "814-159-5726",
+        "seenWith":
+        {
+            "name": "none"
+        }
+    },
+    {
+        "id": 11,
+        "name": "Maree Groh",
+        "age": 29,
+        "sex": "female",
+        "description": "hispanic female with automotive repair tools",
+        "status": "MISSING",
+        "location": "",
+        "collision": false,
+        "contact": "770-506-3272",
+        "seenWith":
+        {
+            "name": "none"
+        }
+    },
+    {
+        "id": 12,
+        "name": "Odessa Gentile",
+        "age": 74,
+        "sex": "female",
+        "description": "white female with lots of cats",
+        "status": "FOUND",
+        "location": "New Orleans, LA",
+        "collision": false,
+        "contact": "310-740-0909",
+        "seenWith":
+        {
+            "name": "Pindarus Harker",
+            "contact": "620-480-0808"
+        }
+    },
+    {
+        "id": 13,
+        "name": "Stiofan Anthony",
+        "age": 22,
+        "sex": "female",
+        "description": "black female juggling bowling balls",
+        "status": "MISSING",
+        "location": "",
+        "collision": false,
+        "contact": "310-749-0909",
+        "seenWith":
+        {
+            "name": "none"
+        }
+    },
+    {
+        "id": 14,
+        "name": "Menachem Triggs",
+        "age": 32,
+        "sex": "female",
+        "description": "white female with a guitar",
+        "status": "MISSING",
+        "location": "",
+        "collision": false,
+        "contact": "815-609-9206",
+        "seenWith":
+        {
+            "name": "none"
+        }
+    },
+    {
+        "id": 15,
+        "name": "Jayani Zamudio",
+        "age": 51,
+        "sex": "female",
+        "description": "black female with a box of grid squares",
+        "status": "MISSING",
+        "location": "",
+        "collision": false,
+        "contact": "648-225-5040",
+        "seenWith":
+        {
+            "name": "none"
+        }
+    },
+    {
+        "id": 16,
+        "name": "Barna Montez",
+        "age": 57,
+        "sex": "male",
+        "description": "Hispanic male carrying an 1-D-10-T form",
+        "status": "MISSING",
+        "location": "",
+        "collision": false,
+        "contact": "570-994-1194",
+        "seenWith":
+        {
+            "name": "none"
+        }
+    },
+    {
+        "id": 17,
+        "name": "Quinby Rivet",
+        "age": 27,
+        "sex": "male",
+        "description": "White male carrying a left-handed torque wrench",
+        "status": "MISSING",
+        "location": "",
+        "collision": false,
+        "contact": "434-803-3398",
+        "seenWith":
+        {
+            "name": "none"
+        }
+    },
+    {
+        "id": 18,
+        "name": "Barret Speight",
+        "age": 56,
+        "sex": "male",
+        "description": "Black male with a ChemLite battery",
+        "status": "MISSING",
+        "location": "",
+        "collision": false,
+        "contact": "610-016-9612",
+        "seenWith":
+        {
+            "name": "none"
+        }
+    },
+    {
+        "id": 19,
+        "name": "Livingston Axelrod",
+        "age": 53,
+        "sex": "male",
+        "description": "Hispanic male with a bottle of bulkhead remover",
+        "status": "MISSING",
+        "location": "",
+        "collision": false,
+        "contact": "406-396-0204",
+        "seenWith":
+        {
+            "name": "none"
+        }
+    },
+    {
+        "id": 20,
+        "name": "Staffan Johanson",
+        "age": 23,
+        "sex": "male",
+        "description": "White male with a bottle of prop wash.",
+        "status": "MISSING",
+        "location": "",
+        "collision": false,
+        "contact": "804-882-5515",
+        "seenWith":
+        {
+            "name":"none"
+        }
+    }
 ];
 
 //we want to populate the table every time the page is loaded.
@@ -99,11 +326,11 @@ var printData = function(){
     missingData.forEach(function(entry) {
 
         if(entry.status === "MISSING"){
-            $('#information').append('<li class = "list-group-item val" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson(this)">' + '<b>'+ "Name = " + entry.name + " Age = " + entry.age + " Sex = " + entry.sex + '<span  style="float:right; cursor: pointer; cursor: hand;" >'+" Status = " + entry.status.fontcolor("red") + '</b><br />' + '</span' +  '</li>');
+            $('#information').append('<li class = "list-group-item val" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson(this)">' + '<b>'+  entry.name  + ",     "+entry.age +  ",     " + entry.sex + '<span  style="float:right; cursor: pointer; cursor: hand;" >'+" Status = " + entry.status.fontcolor("red") + '</b><br />' + '</span' +  '</li>');
         } else if(entry.status === "FOUND"){
-            $('#information').append('<li class = "list-group-item val" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson(this)">' + '<b>'+ "Name = " + entry.name + " Age = " + entry.age + " Sex = " + entry.sex + '<span  style="float:right;  cursor: pointer; cursor: hand;" >'+" Status = " + entry.status.fontcolor("green") + '</b><br />' + '</span' +  '</li>');
+            $('#information').append('<li class = "list-group-item val" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson(this)">' + '<b>'+  entry.name +  ",     " + entry.age + ",     " + entry.sex + '<span  style="float:right;  cursor: pointer; cursor: hand;" >'+" Status = " + entry.status.fontcolor("green") + '</b><br />' + '</span' +  '</li>');
         } else if(entry.status ==="LAST SEEN"){
-            $('#information').append('<li class = "list-group-item val" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson(this)">' + '<b>'+ "Name = " + entry.name + " Age = " + entry.age + " Sex = " + entry.sex + '<span  style="float:right;  cursor: pointer; cursor: hand;" >'+" Status = " + entry.status.fontcolor("orange") + '</b><br />' + '</span' +  '</li>');
+            $('#information').append('<li class = "list-group-item val" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson(this)">' + '<b>'+  entry.name  + ",     " + entry.age  + ",     " + entry.sex + '<span  style="float:right;  cursor: pointer; cursor: hand;" >'+" Status = " + entry.status.fontcolor("orange") + '</b><br />' + '</span' +  '</li>');
         }
 
     })
@@ -143,6 +370,12 @@ var clearModal = function(){
     temp.reset();
 }
 
+//adding a new number to the list
+var addNumber = function(){
+    var num = document.getElementById("pNum").value;
+    phoneNumbers.push(num);
+    $('#pNum').val('');
+}
 //this is a work around for haritsa bad code... Send him back to school.
 var closePerosonModal = function(){
     modal.style.display = "none";
@@ -180,12 +413,12 @@ var addPerson = function(){
     for(var i = 0; i < missingData.length;i++){
         var object = missingData[i];
         if(i === missingData.length - 1){
-            if(object.status === "Missing"){
-                $('#information').append('<li class = "list-group-item val" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson(this)">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex +  '<span " style="float:right; cursor: pointer; cursor: hand;" >'+" Status = " + object.status.fontcolor("red") + '</b><br />' + '</span' +  '</li>');
+            if(object.status === "MISSING"){
+                $('#information').append('<li class = "list-group-item val" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson(this)">' + '<b>'+  object.name + ",     " + object.age + ",     " + object.sex +  '<span " style="float:right; cursor: pointer; cursor: hand;" >'+" Status = " + object.status.fontcolor("red") + '</b><br />' + '</span' +  '</li>');
             } else if(object.status === "FOUND"){
-                $('#information').append('<li class = "list-group-item val" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson(this)">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex +  '<span  style="float:right;  cursor: pointer; cursor: hand;" >'+" Status = " + object.status.fontcolor("green") + '</b><br />' + '</span' +  '</li>');
+                $('#information').append('<li class = "list-group-item val" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson(this)">' + '<b>'+  object.name + ",     " + object.age + ",     " + object.sex +  '<span  style="float:right;  cursor: pointer; cursor: hand;" >'+" Status = " + object.status.fontcolor("green") + '</b><br />' + '</span' +  '</li>');
             } else if(object.status ==="LAST SEEN"){
-                $('#information').append('<li class = "list-group-item val" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson(this)">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex +  '<span  style="float:right;  cursor: pointer; cursor: hand;" >'+" Status = " + object.status.fontcolor("orange") + '</b><br />' + '</span' +  '</li>');
+                $('#information').append('<li class = "list-group-item val" style="font-size: 12px; cursor: pointer; cursor: hand;" onClick="missingPerson(this)">' + '<b>'+  object.name + ",     " + object.age + ",      " + object.sex +  '<span  style="float:right;  cursor: pointer; cursor: hand;" >'+" Status = " + object.status.fontcolor("orange") + '</b><br />' + '</span' +  '</li>');
             }
 
         }
@@ -246,11 +479,7 @@ function initMap() {
         fillOpacity: 0.35,
         map: map,
         center: {lat:29.9511,lng:-90.0715},
-        radius: Math.sqrt(900) * 100
+        radius: Math.sqrt(1500) * 100
     });
 }
-
-$("#test").click(function () {
-    window.alert("HEY");
-});
 

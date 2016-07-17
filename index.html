@@ -28,8 +28,12 @@
 
 <div class="healthcheck-header" id="content">
     <img src="picture.png" style="width:200px;height:60px; position: relative;  margin-top:-15px ; float:left;">
+
     <div class="container">
-        <marquee direction="left" style="margin-top:-60px; font-size:20px; color:white; margin-top:15px" scrollamount="20">LIVE UPDATE: Hurricane Katrina has struck New Orleans and Mr president has declared a state of emergency</marquee>
+        <marquee direction="left" style="margin-top:-60px; font-size:20px; color:white; margin-top:15px"
+                 scrollamount="18">LIVE UPDATE: Hurricane Katrina has struck New Orleans and President Bush has declared a
+            state of emergency. CONFIRMED: 20 people missing, found, or last seen!
+        </marquee>
     </div>
 </div>
 
@@ -42,13 +46,18 @@
                     <input type="text" class="form-control input-lg" placeholder="Search"/>
                 </div>
 
-                <button type = "button" class ="close btn-primary-outline btn-block" data-toggle="modal" data-target="#addPersonModal" Style="padding-top:5px; color:blue" id="test">Add A Person</button>
+                <button type="button" class="close btn-primary-outline btn-block" data-toggle="modal"
+                        data-target="#addPersonModal" Style="padding-top:5px; color:blue" id="test">Add A Person
+                </button>
 
                 <div id="data" style="padding-top:35px">
-                    <ul class="list-group" id="information"></ul>
+                    <ul class="list-group" id="information"  style="height:670px;overflow: auto"></ul>
 
                 </div>
-
+                <div class="input-group" >
+                    <input id="pNum" type="text" class="form-control input-lg" placeholder="Sign up for live text updates!"/>
+                    <span class="input-group-addon"><button  type="button" class="btn btn-primary" onClick="addNumber()">submit</button></span>
+                </div>
             </div>
         </div>
         <div class="col-xs-9">
@@ -59,15 +68,16 @@
 
 
 <!--AddPersonModal-->
-<div class = "modal fade" id="addPersonModal", tabindex="-1" role="dialog" aria-lable="addPersonLable">
+<div class="modal fade" id="addPersonModal" , tabindex="-1" role="dialog" aria-lable="addPersonLable">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button", class="close", data-dismiss="modal" aria-lable="AddClose"><span aria-hidden="true" class="glyphicon glyphicon-remove"></span></button>
+                <button type="button" , class="close" , data-dismiss="modal" aria-lable="AddClose"><span
+                        aria-hidden="true" class="glyphicon glyphicon-remove"></span></button>
                 <h4 class="modal-title" id="modalLable">Add a Person</h4>
             </div>
             <div class="modal-body">
-                <form id = mymodalform>
+                <form id=mymodalform>
                     <fieldset class="form-group">
                         <label for="inputName" class="col-sm-2 form-control-label">Name</label>
                         <div class="col-sm-10">
@@ -83,14 +93,15 @@
                     <fieldset class="form-group">
                         <label for="inputDescription" class="col-sm-2 form-control-label">Description</label>
                         <div class="col-sm-10">
-                            <textarea style="resize:vertical" class="form-control" id="inputDescription" rows="3" placeholder="Enter Short Description"></textarea>
+                            <textarea style="resize:vertical" class="form-control" id="inputDescription" rows="3"
+                                      placeholder="Enter Short Description"></textarea>
                         </div>
                     </fieldset>
                     <fieldset class="form-inline">
                         <label for="inputStatus" class="col-sm-2 form-control-label">Status</label>
                         <div class="col-sm-10">
                             <select class="c-select col-sm-10 form-control" id="inputStatus" style="width:100%">
-                                <option disabled selected value> -- select an option -- </option>
+                                <option disabled selected value> -- select an option --</option>
                                 <option>FOUND</option>
                                 <option>MISSING</option>
                                 <option>LAST SEEN</option>
@@ -106,13 +117,16 @@
                     <fieldset class="form-group">
                         <label for="inputLocation" class="col-sm-2 form-control-label">Location</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputLocation" placeholder="Enter Location is Found or Seen">
+                            <input type="text" class="form-control" id="inputLocation"
+                                   placeholder="Enter Location is Found or Seen">
                         </div>
                     </fieldset>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary" onClick="addPerson();clearModal()" data-dismiss="modal" >Save</button>
+                        <button type="button" class="btn btn-primary" onClick="addPerson();clearModal()"
+                                data-dismiss="modal">Save
+                        </button>
                     </div>
                 </form>
 
@@ -133,19 +147,19 @@
         </div>
         <div class="modal-body2">
             <br>
-            <h5 id = pName></h5>
+            <h5 id=pName></h5>
             <br>
-            <h5 id = pAge></h5>
+            <h5 id=pAge></h5>
             <br>
-            <h5 id = pSex></h5>
+            <h5 id=pSex></h5>
             <br>
-            <h5 id = pDes></h5>
+            <h5 id=pDes></h5>
             <br>
-            <h5 id = pLocation></h5>
+            <h5 id=pLocation></h5>
             <br>
-            <h5 id = pContact></h5>
+            <h5 id=pContact></h5>
             <br>
-            <h5 id = seenWith></h5>
+            <h5 id=seenWith></h5>
         </div>
     </div>
 
