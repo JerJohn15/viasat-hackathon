@@ -88,7 +88,7 @@ var missingData = [
 
 //we want to populate the table every time the page is loaded.
 $( document ).ready(function() {
-    modal = document.getElementById('myModal');
+    modal = document.getElementById('myModal2');
     printData();
 });
 
@@ -120,6 +120,12 @@ var missingPerson = function(){
             modal.style.display = "none";
         }
     }
+}
+
+//clear the modal
+var clearModal = function(){
+    var temp = document.getElementById("mymodalform");
+    temp.reset();
 }
 
 //this is a work around for haritsa bad code... Send him back to school.
