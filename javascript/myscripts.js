@@ -67,7 +67,7 @@ var missingData = [
         {
             "name": "none"
         }
-    },,
+    },
     {
         "id":"5",
         "name": "Jim Edwards",
@@ -108,8 +108,46 @@ var printData = function(){
 };
 
 //this is showing the modal for the userInfo i.e missing/found/last seen
-var test = function(){
-    window.alert("HI");
+var addPerson = function(){
+
+    var name = document.getElementById("inputName").value;
+    var age = document.getElementById("inputAge").value;
+    var description = document.getElementById("inputDescription").value;
+    var status = document.getElementById("inputStatus").value;
+    var contact = document.getElementById("inputContact").value;
+    var location = document.getElementById("inputLocation").value;
+    var id = missingData.length + 1;
+
+    var obj = {
+        "id": id,
+        "name": name,
+        "age": age,
+        "sex": "male",
+        "description": description,
+        "status": status,
+        "location": location,
+        "collision": false,
+        "contact": contact,
+        "seenWith": {
+            "name": "none"
+        }
+    }
+
+    missingData.push(obj);
+    for(var i = 0; i < missingData.length;i++){
+        var object = missingData[i];
+        if(i === missingData.length - 1){
+            if(object.status === "Missing"){
+                $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex + '<span onclick="test()" style="float:right; cursor: pointer; cursor: hand;">'+" Status = " + object.status.fontcolor("red") + '</b><br />' + '</span' +  '</li>');
+            } else if(object.status === "FOUND"){
+                $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex + '<span onClick="test()" style="float:right;  cursor: pointer; cursor: hand;">'+" Status = " + object.status.fontcolor("green") + '</b><br />' + '</span' +  '</li>');
+            } else if(object.status ==="LAST SEEN"){
+                $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex + '<span onClick="test()" style="float:right;  cursor: pointer; cursor: hand;">'+" Status = " + object.status.fontcolor("orange") + '</b><br />' + '</span' +  '</li>');
+            }
+
+        }
+        
+    }
 }
 
 //stuff for the google map.
