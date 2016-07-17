@@ -21,6 +21,7 @@
     <script src="javascript/myscripts.js"></script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpYqQp6TVjEndCdG4atwP71UHVK4xtRP8&callback=initMap"></script>
+
 </head>
 
 <body role="document">
@@ -28,7 +29,7 @@
 <div class="healthcheck-header" id="content">
     <img src="picture.png" style="width:200px;height:60px; position: relative;  margin-top:-15px ; float:left;">
     <div class="container">
-        <marquee direction="left" style="margin-top:-60px; font-size:20px; color:white; margin-top:15px" scrollamount="23">LIVE UPDATE: Hurricane Katrina has struck New Orleans and Mr president has declared a state of emergency</marquee>
+        <marquee direction="left" style="margin-top:-60px; font-size:20px; color:white; margin-top:15px" scrollamount="20">LIVE UPDATE: Hurricane Katrina has struck New Orleans and Mr president has declared a state of emergency</marquee>
     </div>
 </div>
 
@@ -41,7 +42,7 @@
                     <input type="text" class="form-control input-lg" placeholder="Search"/>
                 </div>
 
-                <button type = "button" class ="close btn-primary-outline btn-block" data-toggle="modal" data-target="#addPersonModal" Style="padding-top:5px; color:blue" >Add A Person</button>
+                <button type = "button" class ="close btn-primary-outline btn-block" data-toggle="modal" data-target="#addPersonModal" Style="padding-top:5px; color:blue" id="test">Add A Person</button>
 
                 <div id="data" style="padding-top:35px">
                     <ul class="list-group" id="information"></ul>
@@ -131,8 +132,20 @@
             <h4>Personal Information</h4>
         </div>
         <div class="modal-body2">
-            <p>Some text in the Modal Body</p>
-            <p>Some other text...</p>
+            <br>
+            <h5 id = pName></h5>
+            <br>
+            <h5 id = pAge></h5>
+            <br>
+            <h5 id = pSex></h5>
+            <br>
+            <h5 id = pDes></h5>
+            <br>
+            <h5 id = pLocation></h5>
+            <br>
+            <h5 id = pContact></h5>
+            <br>
+            <h5 id = seenWith></h5>
         </div>
     </div>
 
