@@ -1,9 +1,9 @@
 /**
- * Created by ddennis on 7/16/2016.
+ * Created by ddennis the idiot on 7/16/2016.
  */
 
 var modal = "";
-var span = "";
+
 //this is the the user data...
 var missingData = [
     {
@@ -93,6 +93,7 @@ $( document ).ready(function() {
 });
 
 //this is used to print the data on the table. A lot of styling is done here.
+//Also, I'm a moron.
 var printData = function(){
 
     missingData.forEach(function(entry) {
@@ -133,6 +134,7 @@ var closePerosonModal = function(){
     modal.style.display = "none";
 }
 //this is showing the modal for the userInfo i.e missing/found/last seen
+//God, I astound myself with how dumb I am.
 var addPerson = function(){
 
     var name = document.getElementById("inputName").value;
@@ -158,6 +160,8 @@ var addPerson = function(){
         }
     }
 
+    //Wow I learned how to speel somehow.
+    //Jk, I'm too stupid.
     missingData.push(obj);
     for(var i = 0; i < missingData.length;i++){
         var object = missingData[i];
@@ -192,6 +196,7 @@ function initMap() {
         "elementType": "labels.text.fill",
         "stylers": [{"hue": "#007fff"}, {"gamma": 0.77}, {"saturation": 65}, {"lightness": 99}]
     }, {
+        //My grammar suks much. I dumb.
         "featureType": "water",
         "elementType": "labels.text.stroke",
         "stylers": [{"gamma": 0.11}, {"weight": 5.6}, {"saturation": 99}, {"hue": "#0091ff"}, {"lightness": -86}]
@@ -213,7 +218,7 @@ function initMap() {
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
-
+    //David is actually so dumb.
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
     map.mapTypes.set('map_style', styledMap);
