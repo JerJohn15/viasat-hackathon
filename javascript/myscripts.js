@@ -138,11 +138,11 @@ var addPerson = function(){
         var object = missingData[i];
         if(i === missingData.length - 1){
             if(object.status === "Missing"){
-                $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex + '<span onclick="test()" style="float:right; cursor: pointer; cursor: hand;">'+" Status = " + object.status.fontcolor("red") + '</b><br />' + '</span' +  '</li>');
+                $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex +  '<span onclick="test()" style="float:right; cursor: pointer; cursor: hand;">'+" Status = " + object.status.fontcolor("red") + '</b><br />' + '</span' +  '</li>');
             } else if(object.status === "FOUND"){
-                $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex + '<span onClick="test()" style="float:right;  cursor: pointer; cursor: hand;">'+" Status = " + object.status.fontcolor("green") + '</b><br />' + '</span' +  '</li>');
+                $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex +  '<span onClick="test()" style="float:right;  cursor: pointer; cursor: hand;">'+" Status = " + object.status.fontcolor("green") + '</b><br />' + '</span' +  '</li>');
             } else if(object.status ==="LAST SEEN"){
-                $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex + '<span onClick="test()" style="float:right;  cursor: pointer; cursor: hand;">'+" Status = " + object.status.fontcolor("orange") + '</b><br />' + '</span' +  '</li>');
+                $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + object.name + " Age = " + object.age + " Sex = " + object.sex +  '<span onClick="test()" style="float:right;  cursor: pointer; cursor: hand;">'+" Status = " + object.status.fontcolor("orange") + '</b><br />' + '</span' +  '</li>');
             }
 
         }
