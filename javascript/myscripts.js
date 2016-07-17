@@ -317,6 +317,22 @@ var missingData = [
 $( document ).ready(function() {
     modal = document.getElementById('myModal2');
     printData();
+
+    var input = document.getElementById('searchInput');
+    input.onkeyup = function () {
+        var filter = input.value.toUpperCase();
+        var lis = document.getElementsByTagName('li');
+        for (var i = 0; i < lis.length; i++) {
+            var name = lis[i].textContent;
+            if (name.toUpperCase().indexOf(filter) === 0) {
+                lis[i].style.display = 'list-item';
+            }
+            else{
+                lis[i].style.display = 'none';
+            }
+
+        }
+    }
 });
 
 //this is used to print the data on the table. A lot of styling is done here.
@@ -380,6 +396,15 @@ var addNumber = function(){
 var closePerosonModal = function(){
     modal.style.display = "none";
 }
+
+var changePersonStatus = function(node){
+    if(missingData[i].status !== document.getElementById("changeStatus").value){
+        missingData[i].status = document.getElementById("changeStatus").value.toUpperCase();
+        $('#information').empty();
+        printData();
+    }
+
+}
 //this is showing the modal for the userInfo i.e missing/found/last seen
 //God, I astound myself with how dumb I am.
 var addPerson = function(){
@@ -407,6 +432,9 @@ var addPerson = function(){
         }
     }
 
+    //i'm a god progamer so i'm writing my own filter option
+
+    
     //Wow I learned how to speel somehow.
     //Jk, I'm too stupid.
     missingData.push(obj);
@@ -480,6 +508,41 @@ function initMap() {
         map: map,
         center: {lat:29.9511,lng:-90.0715},
         radius: Math.sqrt(1500) * 100
+    });
+    var marker = new google.maps.Marker({
+        position: {lat:29.9511,lng:-90.0715},
+        map: map,
+        title: 'Edward Saltzman'
+    });
+    var marker2 = new google.maps.Marker({
+        position: {lat:29.9541,lng:-90.0715},
+        map: map,
+        title: 'Bob Smo '
+    });
+    var marker3 = new google.maps.Marker({
+        position: {lat:29.9591,lng:-90.0735},
+        map: map,
+        title: 'Chandler Funk '
+    });
+    var marker4 = new google.maps.Marker({
+        position: {lat:29.9600,lng:-90.0797},
+        map: map,
+        title: 'Cherilyn Coggins '
+    });
+    var marker5 = new google.maps.Marker({
+        position: {lat:29.9716,lng:-90.0797},
+        map: map,
+        title: 'Srikant Garabedian '
+    });
+    var marker56 = new google.maps.Marker({
+        position: {lat:29.9216,lng:-90.0797},
+        map: map,
+        title: 'Strato Frison'
+    });
+    var marker56 = new google.maps.Marker({
+        position: {lat:29.9316,lng:-90.0697},
+        map: map,
+        title: 'Odessa Gentile'
     });
 }
 

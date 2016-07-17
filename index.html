@@ -43,7 +43,7 @@
             <div class="well" id="leftwell">
                 <div class="inner-addon right-addon">
                     <i class="glyphicon glyphicon-search btn" style="color:#EFA533;"></i>
-                    <input type="text" class="form-control input-lg" placeholder="Search"/>
+                    <input id = "searchInput" type="text" class="form-control input-lg" placeholder="Search"/>
                 </div>
 
                 <button type="button" class="close btn-primary-outline btn-block" data-toggle="modal"
@@ -90,7 +90,17 @@
                             <input type="text" class="form-control" id="inputAge" placeholder="Enter Age">
                         </div>
                     </fieldset>
-                    <fieldset class="form-group">
+                    <fieldset class="form-inline">
+                        <label for="inputStatus" class="col-sm-2 form-control-label">Sex</label>
+                        <div class="col-sm-10">
+                            <select class="c-select col-sm-10 form-control" id="inputSex" style="width:100%">
+                                <option disabled selected value> -- select an option --</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group" style="padding-top:17px">
                         <label for="inputDescription" class="col-sm-2 form-control-label">Description</label>
                         <div class="col-sm-10">
                             <textarea style="resize:vertical" class="form-control" id="inputDescription" rows="3"
@@ -109,9 +119,15 @@
                         </div>
                     </fieldset>
                     <fieldset class="form-group" style="padding-top:17px">
-                        <label for="inputContact" class="col-sm-2 form-control-label">Contact</label>
+                        <label for="inputContact" class="col-sm-2 form-control-label">Emergency contact</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="inputContact" placeholder="Enter Phone Number">
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group" style="padding-top:17px">
+                        <label for="inputContact" class="col-sm-2 form-control-label">Contact</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputSearchContact" placeholder="Enter Phone Number">
                         </div>
                     </fieldset>
                     <fieldset class="form-group">
@@ -160,6 +176,19 @@
             <h5 id=pContact></h5>
             <br>
             <h5 id=seenWith></h5>
+
+            <fieldset class="form-inline">
+                <label for="inputStatus" class="col-sm-2 form-control-label">Change Status</label>
+                <div class="col-sm-10">
+                    <select class="c-select col-sm-10 form-control" id="changeStatus" style="width:100%">
+                        <option disabled selected value> -- select an option --</option>
+                        <option>FOUND</option>
+                        <option>MISSING</option>
+                        <option>LAST SEEN</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="closePerosonModal(); changePersonStatus(this)">Save
+            </fieldset>
         </div>
     </div>
 
