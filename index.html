@@ -36,18 +36,16 @@
     <div class="row">
         <div class="col-xs-3">
             <div class="well" id="leftwell">
-                <div id="custom-search-input">
-                    <div class="input-group col-md-12">
-                        <input type="text" class=" search-query form-control" placeholder="Search" style="test-allign:center"/>
-                                <span class="input-group-btn">
-                                    <button class="btn btn-danger" type="button" onClick="test()">
-                                        <span class=" glyphicon glyphicon-search" style="color:#ff4400;"></span>
-                                    </button>
-                                </span>
-                    </div>
+                <div class="inner-addon right-addon">
+                    <i class="glyphicon glyphicon-search btn" style="color:#EFA533;"></i>
+                    <input type="text" class="form-control input-lg" placeholder="Search"/>
                 </div>
 
-                <div id = "data"></div>
+                <div id="data" style="padding-top:10px">
+                    <ul class="list-group" id="information"></ul>
+
+                </div>
+
             </div>
         </div>
         <div class="col-xs-9">

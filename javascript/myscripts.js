@@ -6,6 +6,7 @@
 //this is the the user data...
 var missingData = [
     {
+        "id" : "1",
         "name": "Megan Noland",
         "age": 35,
         "sex": "female",
@@ -21,6 +22,7 @@ var missingData = [
         }
     },
     {
+        "id" : "2",
         "name": "Edward Saltzman",
         "age": 62,
         "sex": "male",
@@ -36,11 +38,12 @@ var missingData = [
         }
     },
     {
-        "name": "Edward Saltzman",
+        "id":"3",
+        "name": "Bob Smo",
         "age": 12,
         "sex": "male",
         "description": "Hispanic male with beanie",
-        "status": "FOUND",
+        "status": "LAST SEEN",
         "location": "Nome, AK",
         "collision": true,
         "contact": "907-442-8460",
@@ -49,18 +52,65 @@ var missingData = [
             "name": "Varsha Quam",
             "contact": "907-553-9571"
         }
-    }
+    },
+    {
+        "id":"4",
+        "name": "Chandler Funk",
+        "age": 99,
+        "sex": "female",
+        "description": "white girl",
+        "status": "LAST SEEN",
+        "location": "Little Rock, AK",
+        "collision": true,
+        "contact": "555-669-2222",
+        "seenWith":
+        {
+            "name": "none"
+        }
+    },,
+    {
+        "id":"5",
+        "name": "Jim Edwards",
+        "age": 27,
+        "sex": "male",
+        "description": "white guy",
+        "status": "MISSING",
+        "location": "Little Rock, AK",
+        "collision": true,
+        "contact": "907-505-6987",
+        "seenWith":
+        {
+            "name": "none"
+        }
+    },
 ];
 
-//we want to populate the table every time the page is loaded. 
+//we want to populate the table every time the page is loaded.
 $( document ).ready(function() {
-
-    missingData.forEach(function(entry) {
-        $('#data').append('<b>'+entry.name+ " " + entry.age + " " + entry.sex + " " + "Status = " + entry.status + '</b><br />' + '</b><br />');
-    })
-
+    printData();
 });
 
+//this is used to print the data on the table. A lot of styling is done here.
+var printData = function(){
+
+    missingData.forEach(function(entry) {
+
+        if(entry.status === "MISSING"){
+            $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + entry.name + " Age = " + entry.age + " Sex = " + entry.sex + '<span onclick="test()" style="float:right; cursor: pointer; cursor: hand;">'+" Status = " + entry.status.fontcolor("red") + '</b><br />' + '</span' +  '</li>');
+        } else if(entry.status === "FOUND"){
+            $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + entry.name + " Age = " + entry.age + " Sex = " + entry.sex + '<span onClick="test()" style="float:right;  cursor: pointer; cursor: hand;">'+" Status = " + entry.status.fontcolor("green") + '</b><br />' + '</span' +  '</li>');
+        } else if(entry.status ==="LAST SEEN"){
+            $('#information').append('<li class = "list-group-item" style="font-size: 12px;">' + '<b>'+ "Name = " + entry.name + " Age = " + entry.age + " Sex = " + entry.sex + '<span onClick="test()" style="float:right;  cursor: pointer; cursor: hand;">'+" Status = " + entry.status.fontcolor("orange") + '</b><br />' + '</span' +  '</li>');
+        }
+
+    })
+
+};
+
+//this is showing the modal for the userInfo i.e missing/found/last seen
+var test = function(){
+    window.alert("HI");
+}
 
 //stuff for the google map.
 function initMap() {
